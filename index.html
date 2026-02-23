@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blondie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #ffc0e0;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .content {
+            flex: 1;
+        }
+        h1 {
+            color: #ff00ff;
+            font-size: 36px;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 20px;
+            color: #ff00ff;
+            line-height: 1.8;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>I Love My Favorite Cow</h1>
+            <p>I have so much love for my favorite cow. She's absolutely wonderful because she's so good-hearted and blonde—which makes her a little bit silly and goofy, but that's exactly what makes her so entertaining and fun to be around! She brings so much joy and laughter to my life.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1612601277749-ceb3b7c5efc5?w=500&q=80" alt="My favorite blonde cow">
+        </div>
+    </div>
+</body>
+</html>
