@@ -1,91 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blondie</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px;
-            background-color: #ffc0e0;
-            min-height: 100vh;
-            position: relative;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="40">❤️</text><text x="50" y="50" font-size="40">💖</text></svg>');
-            background-size: 150px 150px;
-            background-repeat: repeat;
-            background-attachment: fixed;
-        }
-        body::before {
-            display: none;
-        }
-        @keyframes float {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-30px) rotate(10deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        .content {
-            flex: 1;
-            background-color: white;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        h1 {
-            color: #ff00ff;
-            font-size: 36px;
-            margin: 0 0 20px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        p {
-            font-size: 20px;
-            color: #ff00ff;
-            line-height: 1.8;
-            margin: 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-        .image-container {
-            flex: 1;
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Blondie</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: #ffc0e0;
+}
+
+/* CUORI DI SFONDO */
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 40px;
+    opacity: 0.7;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* CONTENUTO */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.content {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    color: #ff00ff;
+    font-size: 48px;
+}
+
+p {
+    font-size: 24px;
+    color: #ff00ff;
+    line-height: 1.8;
+}
+
+/* IMMAGINI A TUTTO SCHERMO */
+.fullscreen-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* BOTTONE */
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    background: #ff00aa;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #cc0088;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="content">
-            <h1>I Love My Favorite Cow</h1>
-            <p>I have so much love for my favorite cow. She's absolutely wonderful because she's so good-hearted and blonde—which makes her a little bit silly and goofy, but that's exactly what makes her so entertaining and fun to be around! She brings so much joy and laughter to my life.</p>
-        </div>
-        <div class="image-container">
-            <img src="mucca scottona.jpg" alt="mucca scottona">
-        </div>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+    <div class="content">
+        <h1>Voglio bene alla mia mucca bionda 🐄💖</h1>
+
+        <p>
+        Ho così tanto amore per la mia mucca preferita. È assolutamente meravigliosa
+        perché ha un cuore d'oro ed è bionda — il che la rende un po' sciocca e buffa,
+        ma è proprio questo che la rende così divertente e piacevole da avere intorno!
+        Porta così tanta gioia e risate nella mia vita.
+        </p>
+
+        <p>
+        Questa dedica è per lei: grazie per sopportare i miei continui "moo"
+        e per essere sempre lì quando dimentico dove ho lasciato il mio cappello di fieno.
+        </p>
+
+        <p>
+        Un altro saluto per essere l'unica mucca che conosco capace di rispondere
+        a un gallo all'alba — sei assolutamente esilarante!
+        </p>
+
+        <button onclick="playMoo()">Premi per sentire MUUU 🐄</button>
     </div>
+
+    <img src="mucca scottona.jpg" class="fullscreen-img">
+    <img src="image.png" class="fullscreen-img">
+
+</div>
+
+<audio id="mooSound">
+    <source src="https://www.soundjay.com/animal/cow-moo1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    heart.style.fontSize = (20 + Math.random() * 40) + "px";
+
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 300);
+
+function playMoo() {
+    document.getElementById("mooSound").play();
+}
+</script>
+
 </body>
 </html>
