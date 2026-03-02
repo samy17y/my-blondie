@@ -11,6 +11,25 @@
             padding: 40px;
             background-color: #ffc0e0;
             min-height: 100vh;
+            position: relative;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="40">❤️</text><text x="50" y="50" font-size="40">💖</text></svg>');
+            background-size: 150px 150px;
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+        body::before {
+            display: none;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
         }
         .container {
             display: flex;
@@ -18,9 +37,15 @@
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         .content {
             flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         h1 {
             color: #ff00ff;
@@ -59,7 +84,7 @@
             <p>I have so much love for my favorite cow. She's absolutely wonderful because she's so good-hearted and blonde—which makes her a little bit silly and goofy, but that's exactly what makes her so entertaining and fun to be around! She brings so much joy and laughter to my life.</p>
         </div>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1612601277749-ceb3b7c5efc5?w=500&q=80" alt="My favorite blonde cow">
+            <img src="mucca scottona.jpg" alt="mucca scottona">
         </div>
     </div>
 </body>
